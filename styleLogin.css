@@ -1,0 +1,36 @@
+.turki {
+    padding: 100px 0;
+}
+.turki .form{
+    width: 400px;
+    padding:50px 40px ;
+    background-color: #1c1c1c;
+    margin: 0 auto;
+    text-align: center;
+}
+.turki .form h2{
+    margin-bottom: 30px;
+}
+.turki .form p{
+    margin-bottom: 5px;
+    text-align: right;
+}
+.turki input{
+    background-color: #272727;
+    width: 320px;
+    border: none;
+    padding:10px;
+    margin-bottom: 20px;
+    color: white;
+}
+.turki .button{
+  background-color: #3257a6;
+  color: #fff;
+  cursor: pointer;
+}
+.turki a{
+    font-size: smaller;
+    margin-bottom: 10px;
+    padding:10px ;
+    color: #bbb;
+}
