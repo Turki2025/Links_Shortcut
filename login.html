@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styleLogin.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ربط - تسجيل الدخول</title>
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class="turki" >
+    <form class="form" name="entrance" onsubmit="check(event)">
+      <h2 >تسجيل الدخول</h2>
+      <p>اسم المستخدم</p>
+      <input type="text" name="user" placeholder=" ادخل اسم المستخدم  ">
+      <p>كلمة المرور</p>
+      <input type="password" name="password" placeholder=" ادخل كلمة المرور  ">
+      <input class="button" type="submit" name="login" value="تسجيل الدخول" >
+      <div>
+        <a href="forget.html">نسيت كلمة المرور</a>
+        <a href="signup.html">ليس لدي حساب</a>
+      </div>
+    </form>
+    <script type="text/javascript">
+      function check(){
+        var error=false;
+        var user = entrance.user.value;
+        var password = entrance.password.value;
+        if(user == "" || password == ""){
+          alert("الرجاء إدخال اسم المستخدم أو كلمة المرور ");
+          error=true;
+        } 
+        if(error){
+          event.preventDefault();
+        }
+      }
+      
+    </script>
+  </body>
+</html>
