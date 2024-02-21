@@ -1,0 +1,26 @@
+@import url('IBM_Font.css');
+@import url('icons.css');
+@import url('dashboard.css');
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #151515;
+}
+

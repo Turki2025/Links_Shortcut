@@ -1,0 +1,80 @@
+.dashboard .sidebar-container {
+  position: relative;
+}
+
+.dashboard .sidebar {
+  position: sticky;
+  top: 0;
+  right: 0;
+
+  width: 250px;
+  height: 100vh;
+  padding: 50px 25px;
+  background: #1c1c1c;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard .sidebar .logo {
+  margin-bottom: 30px;
+}
+
+.dashboard .sidebar a {
+  display: flex;
+  align-items: center;
+
+  padding: 8px 10px;
+  width: 100%;
+  color: #777;
+  text-decoration: none;
+  transition: 0.2s background-color, 0.2s color;
+}
+
+.dashboard .sidebar a span {
+  background-color: #777;
+  margin-left: 10px;
+}
+
+.dashboard .menu a:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.dashboard .sidebar a:not(.unique):hover {
+  background-color: rgba(119, 119, 119, 0.1);
+}
+
+.dashboard .sidebar a.active {
+  color: #3257a6;
+  background-color: rgba(50, 87, 166, 0.1);
+}
+
+.dashboard .sidebar a.active span {
+  background-color: #3257a6;
+}
+
+.dashboard .sidebar a.upgrade {
+  color: #4c956c;
+  background-color: rgba(76, 149, 108, 0.1);
+}
+
+.dashboard .sidebar a.upgrade span {
+  background-color: #4c956c;
+}
+
+.dashboard .sidebar a.upgrade:hover {
+  background-color: rgba(76, 149, 108, 0.3);
+}
+.dashboard .sidebar a.logout {
+  color: #e3655b;
+  background-color: rgba(227, 101, 91, 0.1);
+}
+
+.dashboard .sidebar a.logout span {
+  background-color: #e3655b;
+}
+
+.dashboard .sidebar a.logout:hover {
+  background-color: rgba(227, 101, 91, 0.2);
+}

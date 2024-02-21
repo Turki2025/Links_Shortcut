@@ -1,0 +1,75 @@
+[class^='ico'],
+[class*=' ico'] {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-color: white;
+  transition: 0.2s background-color;
+}
+
+.ico-home {
+  -webkit-mask: url('./../img/home.svg');
+  mask: url('./../img/home.svg');
+}
+
+.ico-link {
+  -webkit-mask: url('./../img/link.svg');
+  mask: url('./../img/link.svg');
+}
+
+.ico-qr {
+  -webkit-mask: url('./../img/qr.svg');
+  mask: url('./../img/qr.svg');
+}
+
+.ico-plan {
+  -webkit-mask: url('./../img/plan.svg');
+  mask: url('./../img/plan.svg');
+}
+
+.ico-profile {
+  -webkit-mask: url('./../img/profile.svg');
+  mask: url('./../img/profile.svg');
+}
+
+.ico-logout {
+  -webkit-mask: url('./../img/logout.svg');
+  mask: url('./../img/logout.svg');
+}
+
+.ico-off {
+  -webkit-mask: url('./../img/off.svg');
+  mask: url('./../img/off.svg');
+}
+
+.ico-on {
+  -webkit-mask: url('./../img/on.svg');
+  mask: url('./../img/on.svg');
+}
+
+.ico-download {
+  -webkit-mask: url('./../img/download.svg');
+  mask: url('./../img/download.svg');
+}
+
+.ico-copy {
+  -webkit-mask: url('./../img/copy.svg');
+  mask: url('./../img/copy.svg');
+}
+
+.ico-edit {
+  -webkit-mask: url('./../img/edit.svg');
+  mask: url('./../img/edit.svg');
+}
+
+.ico-delete {
+  -webkit-mask: url('./../img/delete.svg');
+  mask: url('./../img/delete.svg');
+}
+
+.ico-goto {
+  -webkit-mask: url('./../img/goto.svg');
+  mask: url('./../img/goto.svg');
+}
