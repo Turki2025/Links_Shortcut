@@ -5,7 +5,7 @@
   <title>ربط - تسجيل الدخول</title>
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="styleLogin.css" />
+  <link rel="stylesheet" href="./assets/css/styleLogin.css" />
 </head>
 
 <body class="turki">
@@ -20,8 +20,7 @@
       echo "<script>alert('تم انشاء حسابك')</script>";
     }
 
-    $con = mysqli_connect("localhost", "root", "", "rabt");
-    mysqli_set_charset($con, "utf8");
+    include './assets/php/connection.php';
     if (isset($_POST["login"])) {
       $user = trim($_POST['user']);
       $password = trim($_POST['password']);
@@ -32,21 +31,30 @@
       }
 
       if (!$error) {
-        $checkAccount = "select id,username,email,subscribed from users where username = '$user' and password='$password' ";
+        $checkAccount = "select id,username,email,subscribed from users where username = '$user' and password=md5('$password')";
         $checkAccount = mysqli_query($con, $checkAccount);
 
         if (mysqli_num_rows($checkAccount) >= 1) {
           $user = mysqli_fetch_array($checkAccount);
-          setcookie("user", json_encode($user), time() + 60 * 60 * 24 * 7);
-          header("location: dashboard.html");
+          
+          //جزئية حسام
+            $user['newsletter'] = 0;
+            $email = $user['email'];
+            $getNewsletter = mysqli_query($con, "SELECT email FROM newsletter WHERE email = '$email'");
+            if (mysqli_num_rows($getNewsletter) >= 1) {
+              $user['newsletter'] = 1;
+            }
+          //نهاية جزئية حسام
+          
+          setcookie("user", json_encode($user), time() + 60 * 60 * 24 * 7, '/');
+          header("location: dashboard.php");
           exit();
         } else {
           echo "<script>alert('هنالك خطأ في كلمة المرور أو اسم المستخدم')</script>";
         }
       }
-
-
     }
+    mysqli_close($con);
     ?>
     <h2>تسجيل الدخول</h2>
     <p>اسم المستخدم</p>

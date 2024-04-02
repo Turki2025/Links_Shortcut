@@ -5,7 +5,7 @@
   <title>ربط - تسجيل الحساب</title>
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="styleLogin.css" />
+  <link rel="stylesheet" href="./assets/css/styleLogin.css" />
 </head>
 
 <body class="turki">
@@ -16,11 +16,8 @@
         header("location: dashboard.php");
         exit();
     }
-    $con = mysqli_connect("localhost", "root", "","rabt");
     
-
-    mysqli_set_charset($con, "utf8");
-
+    include './assets/php/connection.php';
     if (isset($_POST["signin"])) {
       $name = trim($_POST['name']);
       $user = trim($_POST['user']);
@@ -40,21 +37,21 @@
       $checkUser = "select username from users where username = '$user' ";
       $checkUser = mysqli_query($con, $checkUser);
       if (mysqli_num_rows($checkUser) > 0) {
-        echo '<script>alert("غير متاح اسم مستخدم")</script>';
+        echo '<script>alert("اسم المستخدم غير متاح")</script>';
         $error = true;
       }
 
       $checkEmail = "select email from users where email = '$email' ";
       $checkEmail = mysqli_query($con, $checkEmail);
       if (mysqli_num_rows($checkEmail) > 0) {
-        echo " <script>alert(البريد الإلكتروني مستخدم)</script>";
+        echo " <script>alert(البريد الإلكتروني غير متاح)</script>";
         $error = true;
       }
 
 
       if (!$error) {
         $insert = "INSERT INTO users(username,name,email,password) 
-        VALUES('$user','$name','$email','$password')";
+        VALUES('$user','$name','$email',md5('$password'))";
 
         $insert = mysqli_query($con, $insert);
 
@@ -66,7 +63,8 @@
       }
 
     }
-
+    
+    mysqli_close($con);
     ?>
     <h2>حساب جديد</h2>
     <p>الاسم</p>

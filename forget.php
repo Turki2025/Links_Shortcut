@@ -2,19 +2,16 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="styleLogin.css" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ربط - نسيت كلمة المرور</title>
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/styleLogin.css" />
 </head>
 
 <body class="turki">
   <form class="form" name="forgeted" onsubmit="check(event)" action="">
     <?php
-    $con = mysqli_connect("localhost", "root", "", "rabt");
-    mysqli_set_charset($con, "utf8");
+    include './assets/php/connection.php';
 
     if (isset($_POST["forget"])) {
       $user = trim($_POST['email']);
